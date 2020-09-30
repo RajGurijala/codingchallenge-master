@@ -39,16 +39,9 @@ namespace ConstructionLine.CodingChallenge.Tests
             sw.Stop();
             Console.WriteLine($"Test fixture finished in {sw.ElapsedMilliseconds} milliseconds");
 
-            // Note: this test results are not matching with the 'requirements' as I understood - I can give explanation - Raj
-            //AssertResults(results.Shirts, options);
-            //AssertSizeCounts(_shirts, options, results.SizeCounts);
-            //AssertColorCounts(_shirts, options, results.ColorCounts);
-
-            Dictionary<string, int> shirtsByColor = _searchEngine.GetTotalShirtsByColor();
-
-            int redShirts = shirtsByColor[Color.Red.Name];
-
-            Assert.AreEqual(redShirts, results.Shirts.Count);
+            AssertResults(results.Shirts, options);
+            AssertSizeCounts(_shirts, options, results.SizeCounts);
+            AssertColorCounts(_shirts, options, results.ColorCounts);
         }
     }
 }

@@ -30,15 +30,10 @@ namespace ConstructionLine.CodingChallenge.Tests
             };
 
             var results = searchEngine.Search(searchOptions);
-
-            // Note: this test results are not matching with the 'requirements' as I understood - I can give explanation - Raj
-            //AssertResults(results.Shirts, searchOptions);
-            //AssertSizeCounts(shirts, searchOptions, results.SizeCounts);
-            //AssertColorCounts(shirts, searchOptions, results.ColorCounts);
-
-            Assert.AreEqual(1, results.Shirts.Count);
-            Assert.AreEqual(1, results.SizeCounts.FirstOrDefault(s => s.Size.Name.Equals(Size.Small.Name)).Count);
-            Assert.AreEqual(1, results.ColorCounts.FirstOrDefault(c => c.Color.Name.Equals(Color.Red.Name)).Count);
+                        
+            AssertResults(results.Shirts, searchOptions);
+            AssertSizeCounts(shirts, searchOptions, results.SizeCounts);
+            AssertColorCounts(shirts, searchOptions, results.ColorCounts);
         }
 
         [Test]
